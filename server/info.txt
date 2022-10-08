@@ -1,0 +1,40 @@
+info.txt
+
+
+// NOTES
+
+Setup:
+
+1. Installed Docker on MAC
+2. docker pull mcr.microsoft.com/mssql/server:2017-latest
+3. docker run -d --name ms-sql-server -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=Valuetech@123' -p 1433:1433 mcr.microsoft.com/mssql/server:2017-latest
+    ms-sql-server -> name of the sql server
+    -e ACCEPT_EULA=Y -> env var accepting licensing agreement
+    -e SA_PASSWORD=Valuetech@123 -> pw can be anything
+    -p -> p stands for port 1433:1433
+    mcr.microsoft.com/mssql/server:2017-latest -> 
+4. Open docker tab from top bar, you'll see port 1433 is now running
+
+5. Download sample database
+    AdventureWorks2017.bak (this matches what's showing inside Azure Data Studio)
+
+6. In order for SQL server to access the .bak file
+    sudo docker exec -it ms-sql-server mkdir var/opt/mssql/backup
+
+    var/opt/mssql/backup -> system path that's accessible by ms-sql-server
+        this is the file path where this backup directory will be created
+
+7. sudo docker cp AdventureWorks2017.bak ms-sql-server:var/opt/mssql/backup
+    Going to copy the AdventureWorks2017 db to this directory 
+
+    sudo docker -> the command
+    .bak -> the backup file
+    copying file from the downloads folder to the file system within ms-sql-server
+
+8. Go through the process of restoring the database
+
+    Restoring is the process of copying data from a backup and applying logged transactions to the data. Restore is what you do with backups. Take the backup file and turn it back into a database.
+
+9. 
+
+
