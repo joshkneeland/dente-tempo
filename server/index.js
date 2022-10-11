@@ -4,7 +4,7 @@ const app = express();
 const cors = require("cors");
 const asyncHandler = require("express-async-handler");
 require("dotenv").config({ path: "../.env" });
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 8000;
 const { errorHandler } = require('./middleware/errorMiddleware');
 app.use(cors());
 app.use(express.json());

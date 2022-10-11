@@ -18,6 +18,5 @@
     "mongodb": "^4.10.0",
     "mongoose": "^6.6.5",
     "node-cron": "^3.0.0"
-  },
-  "proxy": "http://localhost:3001"
+  }
 }
