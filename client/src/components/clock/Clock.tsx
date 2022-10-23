@@ -42,7 +42,6 @@ function Clock() {
       });
 
     return () => {
-      console.log("cleaned up");
       localStorage.setItem('timerSecStorage', String(timerOneSec));
       localStorage.setItem('timerMinStorage', String(timerOneMin));
       localStorage.setItem('timerHrStorage', String(timerOneHr));

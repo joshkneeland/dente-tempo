@@ -5,6 +5,11 @@ const Time = require('../models/timeModel.js');
 // @route GET /
 // @access private 
 const updateTime = asyncHandler(async (req, res) => {
+    updateTimeValue();
+});
+
+
+const updateTimeValue = asyncHandler(async (req, res) => {
     // checkTimeVal is the default object that is returned to the front-end
     let checkTimeVal = {
         message: 'Returned checkTimeVal as normal',
@@ -18,7 +23,7 @@ const updateTime = asyncHandler(async (req, res) => {
     // Find the current instance stored in the DB
     const checkTime = await Time.findOne();
     if(checkTime?.text && date.toLocaleDateString() !== checkTime.text) {
-        checkTimeVal.message = 'Updated Time Value', 
+        checkTimeVal.message = 'Updated Time Value';
         checkTimeVal.resetTimeVal = true;
     }
 
@@ -34,9 +39,11 @@ const updateTime = asyncHandler(async (req, res) => {
     const createTime = await Time.create({
         text: date.toLocaleDateString(),
     });
+
     res.status(201).json(checkTimeVal);
 });
 
 module.exports = {
     updateTime,
+    updateTimeValue,
 }
