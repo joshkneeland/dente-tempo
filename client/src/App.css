@@ -1,10 +1,52 @@
+/* Web Font */
+@import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
+
 .App {
   text-align: center;
+  background: url('./images/dentist-office.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: 'Play', Helvetica, sans-serif;
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+
+.button-wrapper {
+  margin: 2rem;
+}
+
+button {
+  border-radius: 0.5rem;
+  border: 1px solid #FFF;
+  padding: 1.25rem 1.5rem;
+  font-size: 1rem;
+  margin: 0.5rem;
+  background-color: rgba(0, 0, 0, 0);
+  color: #FFF;
+  text-transform: uppercase;
+}
+
+button:hover {
+  cursor: pointer;
+  transition: 0.3s;
+  background-color: rgba(255, 255, 255, 0.5);
+  color: #000;
+}
+
+h1 {
+  font-size: 4rem;
+}
+
+h2 {
+  margin-bottom: 0.5rem;
+}
+
+h4 {
+  margin: 0;
+  font-size: 1.25rem;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -14,7 +56,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: rgba(0, 0, 0, 0.7);
   min-height: 100vh;
   display: flex;
   flex-direction: column;

@@ -15,15 +15,21 @@ function Clock() {
   const [timerOneSec, setTimerOneSec] = useState(Number(timerSecStorage) || 0);
 
   // Changes which timer is currently running
-  function clickTimerBtn() {
+  const clickTimerBtn = () => {
     setTimerSwitch(!timerSwitch);
   }
 
-  function resetTimer() {
+  const resetTimer = () => {
     window.localStorage.clear();
     setTimerOneHr(0);
     setTimerOneMin(0);
     setTimerOneSec(0);
+  }
+
+  const setTimezone = () => {
+    const shortDate = new Date().toLocaleTimeString('en-us', {timeZoneName: 'short'});
+    return shortDate.split(' ')[2];
+    // console.log(shortDate.split(' ')[2]); // EST
   }
 
   // Initialize on page load
@@ -78,14 +84,16 @@ function Clock() {
   return (
     <div className="Clock">
       <header className="Clock-header">
-        <h4>Current Time:</h4>
-        <h5>{time.date.toLocaleTimeString()}</h5>
-        <h4>Aligners are {timerSwitch ? 'out' : 'in'}:</h4>
-        <h5>
+        <h2>Current Time:</h2>
+        <h4>{time.date.toLocaleTimeString()} - {setTimezone()}</h4>
+        <h2>Aligners are {timerSwitch ? 'out' : 'in'}:</h2>
+        <h4>
           {timerOneHr} hr {timerOneMin} min {timerOneSec} sec
-        </h5>
-        <button onClick={clickTimerBtn}>Timer Switch</button>
-        <button onClick={resetTimer}>Reset Time</button>
+        </h4>
+        <div className="button-wrapper">
+          <button onClick={clickTimerBtn}>Timer Switch</button>
+          <button onClick={resetTimer}>Reset Time</button>
+        </div>
       </header>
     </div>
   );
