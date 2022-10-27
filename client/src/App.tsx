@@ -1,6 +1,7 @@
 import React from "react";
 import Clock from "./components/clock/Clock";
 import "./App.css";
+import LogoImg from './images/dente-tempo-logo-horizontal.svg';
 
 function App() {
   return (
@@ -18,7 +19,8 @@ function App() {
         >
           Learn React
         </a> */}
-        <h1>Dente Tempo</h1>
+        {/* <h1>Dente Tempo</h1> */}
+        <img src={LogoImg} alt='Dente Tempo Logo' className='dente-tempo-logo'/>
         <Clock/>
       </header>
     </div>
