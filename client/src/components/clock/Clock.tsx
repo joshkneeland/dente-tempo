@@ -52,7 +52,13 @@ function Clock() {
       localStorage.setItem('timerMinStorage', String(timerOneMin));
       localStorage.setItem('timerHrStorage', String(timerOneHr));
     };
-  }, []);
+  }, [timerOneHr, timerOneMin, timerOneSec]);
+
+  setInterval(() => {
+    setTime({
+      date: new Date(),
+    });
+  }, 1000);
 
   useEffect(() => {
     if (timerSwitch) {
@@ -67,13 +73,7 @@ function Clock() {
         time
       );
     } 
-  }, [time.date.toLocaleTimeString()]);
-
-  setInterval(() => {
-    setTime({
-      date: new Date(),
-    });
-  }, 1000);
+  }, [time.date.toLocaleTimeString(), timerOneSec, timerOneMin, timerOneHr, time, timerSwitch]);
 
   window.onbeforeunload = (e) => {
     localStorage.setItem('timerSecStorage', String(timerOneSec));
