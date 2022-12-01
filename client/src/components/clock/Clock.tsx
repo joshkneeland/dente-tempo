@@ -52,7 +52,7 @@ function Clock() {
       localStorage.setItem('timerMinStorage', String(timerOneMin));
       localStorage.setItem('timerHrStorage', String(timerOneHr));
     };
-  }, [timerOneHr, timerOneMin, timerOneSec]);
+  }, []);
 
   setInterval(() => {
     setTime({
@@ -73,7 +73,7 @@ function Clock() {
         time
       );
     } 
-  }, [time.date.toLocaleTimeString(), timerOneSec, timerOneMin, timerOneHr, time, timerSwitch]);
+  }, [time.date.toLocaleTimeString()]);
 
   window.onbeforeunload = (e) => {
     localStorage.setItem('timerSecStorage', String(timerOneSec));
