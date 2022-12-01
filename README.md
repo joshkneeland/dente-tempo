@@ -29,6 +29,11 @@ Here are a few additional steps I would like to accomplish with this app:
 
 ## Screenshots
 
+Desktop View:
 ![Alt text](/client/src/images/dente-tempo-desktop.png?raw=true "Dente Tempo - Desktop View")
+
+Tablet View:
 ![Alt text](/client/src/images/dente-tempo-tablet.png?raw=true "Dente Tempo - Tablet View")
+
+Mobile View:
 ![Alt text](/client/src/images/dente-tempo-mobile.png?raw=true "Dente Tempo - Mobile View")
