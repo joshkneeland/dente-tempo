@@ -18,6 +18,8 @@ Here are a few additional steps I would like to accomplish with this app:
 
 ## Set Up
 
+- NOTE: These set up steps are a work in progress. I am currently using environment variables in order to set up access to MongoDB from the repository.
+
 1. Clone this repository to your local machine
 2. Navigate into the /client directory from the root folder of the repository
 3. Run 'yarn' to install the necessary dependecies
